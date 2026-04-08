@@ -27,7 +27,9 @@ All interactive:
 Entry #3
 Tool Used: Claude, ChatGPT, BlackBoxAI
 Prompt (copy-paste exactly):make the submit button work i nthe contact
-AI Output (summary or screenshot reference):// Contact form submit
+AI Output (summary or screenshot reference):
+
+// Contact form submit
   const contactInput = document.querySelector('.input input');
   const submitBtn = document.querySelector('.contact .btn');
   if (contactInput && submitBtn) {
@@ -46,7 +48,9 @@ AI Output (summary or screenshot reference):// Contact form submit
 Entry #4
 Tool Used: Claude, ChatGPT, BlackBoxAI
 Prompt (copy-paste exactly):make the download cv work and contact
-AI Output (summary or screenshot reference):// Contact form submit
+AI Output (summary or screenshot reference):
+
+// Contact form submit
   const contactInput = document.querySelector('.input input');
   const submitBtn = document.querySelector('.contact .btn');
   if (contactInput && submitBtn) {
@@ -73,17 +77,63 @@ AI Output (summary or screenshot reference):// Contact form submit
 Entry #5
 Tool Used: Claude, ChatGPT, BlackBoxAI
 Prompt (copy-paste exactly):at the header Clint Fernandez can you make it a clickable link in a fb acc
-AI Output (summary or screenshot reference):<a href="https://web.facebook.com/clint.fernandez.3956" class="logo" target="_blank"><span>Clint Fernandez</span></a> 
+AI Output (summary or screenshot reference):
+
+<a href="https://web.facebook.com/clint.fernandez.3956" class="logo" target="_blank"><span>Clint Fernandez</span></a> 
           
 Entry #6
 Tool Used: Claude, ChatGPT, BlackBoxAI
 Prompt (copy-paste exactly):can you make the download cv a downloadable pdf file?
-AI Output (summary or screenshot reference): window.open('assets/Example_CV.pdf', '_blank');
+AI Output (summary or screenshot reference): 
 
+window.open('assets/Example_CV.pdf', '_blank');
 
+Entry #7
+Tool Used: Claude, ChatGPT, BlackBoxAI
+Prompt (copy-paste exactly):make the visitor form work, fix the errors
+AI Output (summary or screenshot reference): 
 
+/ Visitor name personalization (resets on reload)
+  function setVisitorName() {
+    // Clear any existing stored name
+    localStorage.removeItem('visitorName');
+    
+    const visitorNameEl = document.getElementById('visitorName');
+    const name = prompt("What's your name? (Optional)");
+    
+    if (name && name.trim() && visitorNameEl) {
+      const trimmedName = name.trim();
+      visitorNameEl.textContent = trimmedName;
+      visitorNameEl.style.background = 'linear-gradient(to right, rgb(255, 0, 0), rgb(0, 157, 255))';
+      visitorNameEl.style.backgroundClip = 'text';
+      visitorNameEl.style.color = 'transparent';
+    }
+  }
+  setVisitorName();
 
+Entry #8
+Tool Used: Claude, ChatGPT, BlackBoxAI
+Prompt (copy-paste exactly):make the search bar work
+AI Output (summary or screenshot reference): 
 
+const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase().trim();
+      const skillCards = document.querySelectorAll('.skills .skill-card');
+      const projectCards = document.querySelectorAll('.projects .project-card');
+
+      skillCards.forEach(card => {
+        const text = card.querySelector('h3').textContent + card.querySelector('p').textContent;
+        card.classList.toggle('hidden', query && !text.toLowerCase().includes(query));
+      });
+
+      projectCards.forEach(card => {
+        const text = card.querySelector('h3').textContent + card.querySelector('p').textContent;
+        card.classList.toggle('hidden', query && !text.toLowerCase().includes(query));
+      });
+    });
+  }
 
 
 How I used/modified it in my project:

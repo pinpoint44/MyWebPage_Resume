@@ -10,7 +10,12 @@
 <body>
 
     <header class="header">
-        <a href="https://web.facebook.com/clint.fernandez.3956?_rdc=1&_rdr" class="logo" target="_blank"><span>Clint Fernandez</span></a> 
+        <a href="#about" class="logo"><span>Clint Fernandez</span></a> 
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search skills or projects...">
+            <i class="fa-solid fa-search"></i>
+        </div>
 
         <ul class="nav-links">
             <li>
@@ -51,7 +56,8 @@
 
             <div class="info-box">
                 <div class="text">
-                    <h3>Hi, I'm</h3>
+                    <h3>Hi, <span id="visitorName"></span> I'm</h3>
+                    
                     <h1>Clint Allan C. Fernandez</h1>
                     <span>Web Developer | Information Technology Student</span>
                 </div>
@@ -182,12 +188,27 @@
 
             <h2 class="section-title">Contact Me</h2>
 
-            <div class="input">
-                <input type="text" placeholder="example@email.com">
-                <i class="fa-solid fa-envelope"></i>
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <span class="error-message" id="name-error"></span>
             </div>
 
-            <div class="btn">Submit</div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Your Email">
+                <span class="error-message" id="email-error"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="subject" placeholder="Subject">
+                <span class="error-message" id="subject-error"></span>
+            </div>
+
+            <div class="form-group">
+                <textarea id="message" placeholder="Your Message" rows="5"></textarea>
+                <span class="error-message" id="message-error"></span>
+            </div>
+
+            <div class="btn submit-btn" id="submitBtn">Submit</div>
         </div>
     </section>
 
